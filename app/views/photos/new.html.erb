@@ -1,0 +1,12 @@
+<%= form_for @photo do |f| %>
+Nazvanie
+<%= f.text_field :title %>
+Shirota
+<%= f.text_field :lattitute %>
+Dolgota
+<%= f.text_field :longitude %>
+Tip
+<%= f.text_field :type %>
+
+<%= f.submit %>
+<% end %>
