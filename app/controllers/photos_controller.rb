@@ -4,16 +4,17 @@ class PhotosController < ApplicationController
   end
   
   def new
-   @photo = Photo.new 
+   @photo = Photo.new #inicializ form s nujnimi pol9mi
   end
   
-  def create 
-    Photo.create(
-      title: params[:photo][:title], 
-      lattitute: params[:photo][:lattitute], 
-      longitude: params[:photo][:longitude],
-      photo_type: params[:photo][:photo_type]) 
+  def create
+    @photo = Photo.new(permitted_params[:photo])
+    if @photo.valid?
+     @photo.save
      redirect_to photos_path
+    else
+     render :new 
+    end
   end
   def edit
     @photo = Photo.find(params[:id])    
@@ -21,11 +22,18 @@ class PhotosController < ApplicationController
   
   def update
     @photo = Photo.find(params[:id])  
-    @photo.update_attributes(
-      title: params[:photo][:title], 
-      lattitute: params[:photo][:lattitute], 
-      longitude: params[:photo][:longitude],
-      photo_type: params[:photo][:photo_type]) 
+    if @photo.update_attributes(permitted_params[:photo]) 
      redirect_to photos_path
   end
-end
+  
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to photos_path
+  end
+  
+ private
+  def permitted_params
+    params.permit!
+  end
+end    

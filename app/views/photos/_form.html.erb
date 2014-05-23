@@ -1,6 +1,9 @@
 <%= form_for @photo do |f| %>
   Nazvanie
   <%= f.text_field :title %>
+  <% @photo.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
   Shirota
   <%= f.text_field :lattitute %>
   Dolgota

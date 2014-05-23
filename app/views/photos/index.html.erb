@@ -6,6 +6,7 @@
         <%=photo.photo_type%>
     </li> 
    <%=link_to "Edit photo", edit_photo_path(photo)  %>
+   <%=link_to "Delete photo", photo_path(photo), data: {method: "delete"} %>
  <% end %>
 </ul>
 <%=link_to "New photo", new_photo_path  %>
