@@ -3,7 +3,9 @@
     <li><%=photo.title%> 
         <%=photo.lattitute%>
         <%=photo.longitude%>
-    </li>
+        <%=photo.photo_type%>
+    </li> 
+   <%=link_to "Edit photo", edit_photo_path(photo)  %>
  <% end %>
 </ul>
-
+<%=link_to "New photo", new_photo_path  %>
