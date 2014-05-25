@@ -18,11 +18,4 @@
   <% end %>
 <% end %>
 
-<%= form_for @user do |t| %>
-  Nazvanie
-  <%= t.text_field :title %> 
-  <% @photo.errors.full_messages.each do |mesg| %>
-  <li><%= mesg %></li> 
-  <% end %>
-<% end %>
 

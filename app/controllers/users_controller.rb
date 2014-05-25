@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])  
-    @user.update_attributes(permitted_params[:user])
-    if @user.valid? 
+    if @user.update_attributes(permitted_params[:user])
+     @user.valid? 
      redirect_to users_path 
     else
       render :new

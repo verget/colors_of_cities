@@ -1,6 +1,11 @@
 <%= form_for @user do |t| %>
-  Nazvanie
-  <%= t.text_field :title %> 
+  Name
+  <%= t.text_field :name %> 
+  Email
+  <%= t.text_field :email %>
+  
+  
+  <%= t.submit %>
   <% @user.errors.full_messages.each do |msg| %>
   <li><%= msg %></li> 
   <% end %>
