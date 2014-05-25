@@ -1,0 +1,8 @@
+<%= form_for @user do |t| %>
+  Nazvanie
+  <%= t.text_field :title %> 
+  <% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li> 
+  <% end %>
+<% end %>
+

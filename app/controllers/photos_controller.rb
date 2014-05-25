@@ -15,21 +15,27 @@ class PhotosController < ApplicationController
     else
      render :new 
     end
+    
   end
   def edit
-    @photo = Photo.find(params[:id])    
+    @photo = Photo.find(params[:id])     
   end
   
   def update
     @photo = Photo.find(params[:id])  
-    if @photo.update_attributes(permitted_params[:photo]) 
+    @photo.update_attributes(permitted_params[:photo])
+    if @photo.valid? 
      redirect_to photos_path
+    else
+      render :new
+    end
   end
   
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to photos_path
+    
   end
   
  private
