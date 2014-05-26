@@ -34,7 +34,6 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to photos_path
-    
   end
   
  private

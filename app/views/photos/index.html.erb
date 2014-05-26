@@ -4,6 +4,8 @@
         <%=photo.lattitute%>
         <%=photo.longitude%>
         <%=photo.photo_type%>
+        <%=photo.user.try(:name)%>
+        <%=image_tag photo.file%>
     </li> 
    <%=link_to "Edit photo", edit_photo_path(photo)  %>
    <%=link_to "Delete photo", photo_path(photo), data: {method: "delete"} %>
