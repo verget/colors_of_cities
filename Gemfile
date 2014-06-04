@@ -29,6 +29,11 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'carrierwave'
 
+
+gem "mini_magick"
+
+gem 'rake', '~> 10.3.2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -44,4 +49,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+
+#gem 'debugger', '~> 1.6.6', group: [:development, :test]
+
+
