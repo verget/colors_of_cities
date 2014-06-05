@@ -1,0 +1,31 @@
+<h1>Listing your_scaffolds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @your_scaffolds.each do |your_scaffold| %>
+      <tr>
+        <td><%= your_scaffold.title %></td>
+        <td><%= your_scaffold.description %></td>
+        <td><%= your_scaffold.image %></td>
+        <td><%= link_to 'Show', your_scaffold %></td>
+        <td><%= link_to 'Edit', edit_your_scaffold_path(your_scaffold) %></td>
+        <td><%= link_to 'Destroy', your_scaffold, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Your scaffold', new_your_scaffold_path %>
