@@ -1,10 +1,14 @@
 <ul>
  <% @photos.each do |photo| %>
-    <li><%=photo.title%> 
+    <li><%=photo.title%>
+        <br/> 
         <%=photo.lattitute%>
         <%=photo.longitude%>
+        <br/> 
         <%=photo.photo_type%>
+        <br/> 
         <%=photo.user.try(:name)%>
+        <br/> 
         <%=image_tag photo.file.thumb%>
 
     </li> 
