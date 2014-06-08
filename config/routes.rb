@@ -1,11 +1,11 @@
 ColorsOfCities::Application.routes.draw do
+  get "users/profile"
   devise_for :users
-  resources :your_scaffolds
 
   resources :photos, :users
   
   root 'home#index'
-  get 'users/edit', as: 'user_root'
+  get 'users/profile', as: 'user_root'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
