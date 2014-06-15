@@ -1,29 +1,16 @@
-<%= form_for @photo, :html => {:multipart => true}  do |f| %>
-  Title
-  <%= f.text_field :title %>
- 
-  Lattitute
-  <%= f.text_field :lattitute %>
-  
-  Longitude
-  <%= f.text_field :longitude %>
-  
-  Type
-  <%= f.text_field :photo_type %>
-  
-  User
-  <%= f.select(:user_id, options_from_collection_for_select(User.all, :id, :name)) %>
-  
-  Image
-  
-  <%= f.file_field :file %>
+<%= simple_form_for @photo, :html => {:multipart => true}  do |f| %>
 
-  <%= f.submit %>
-  
+  <%= f.input :title %>
+  <%= f.input :lattitute %>
+  <%= f.input :longitude %>
+  <%= f.input :photo_type %>
+  User
+  <%= f.select(:user_id, options_from_collection_for_select(User.all, :id, :email)) %><br/>
+  Image 
+  <%= f.file_field :file %><br/>
+  <%= f.button :submit%> 
   <% @photo.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
-  
-  
   <% end %>
 <% end %>
 

@@ -31,6 +31,8 @@ gem 'carrierwave'
 
 gem 'devise', '3.2.2'
 gem "mini_magick"
+gem 'simple_form'
+gem 'authority'
 
 gem 'rake', '~> 10.3.2'
 

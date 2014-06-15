@@ -1,11 +1,12 @@
 <ul>
  <% @users.each do |user| %>
-    <li><%=user.name%>
+    <li><%=user.id%>
+        <%=user.name%><br/>
         <%=user.email%>
-        <%=user.id%></li> 
-   <%=link_to "Edit user", edit_user_path(user)  %>
-   <%=link_to "Delete user", user_path(user), data: {method: "delete"} %>
+        </li> 
+   <%#=link_to "Edit user", edit_user_path(user)  %>
+   <%#=link_to "Delete user", user_path(user), data: {method: "delete"} %>
  <% end %>
 </ul>
-<%=link_to "New user", new_user_path  %><br/>
+<%#=link_to "New user", new_user_path  %><br/>
 <%=link_to "Photos", photos_path  %>
