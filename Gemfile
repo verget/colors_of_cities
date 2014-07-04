@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'carrierwave'
 
+gem 'authority'
+
 gem 'devise', '3.2.2'
 gem "mini_magick"
 
